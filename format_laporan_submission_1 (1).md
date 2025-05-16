@@ -6,7 +6,7 @@ Klasifikasi varietas biji kering (dry beans) merupakan aspek penting dalam indus
 
 Dengan kemajuan teknologi, khususnya dalam bidang computer vision dan machine learning, memungkinkan otomatisasi proses ini dengan akurasi tinggi. Dataset Dry Bean dari UCI Machine Learning Repository menyediakan data morfologis dari 13.611 biji kering yang berasal dari tujuh varietas berbeda, yang diambil menggunakan kamera resolusi tinggi dan diekstraksi menjadi 16 fitur numerik.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
+**Rubrik/Kriteria Tambahan**:
 ### Pentingnya Masalah
 - Automatisasi klasifikasi biji kering dapat meningkatkan efisiensi dalam rantai pasok pertanian, mengurangi biaya operasional, dan meningkatkan konsistensi kualitas produk. Selain itu, pendekatan ini dapat diterapkan pada komoditas pertanian lainnya, memperluas dampak positifnya dalam sektor pertanian secara keseluruhan.
 
@@ -70,9 +70,6 @@ Untuk mencapai tujuan dalam mengklasifikasikan jenis kacang kering secara akurat
 ### Sumber Data
 Dataset yang digunakan adalah Dry Bean Dataset dari [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/602/dry+bean+dataset), yang terdiri dari 13.611 sampel biji kering dari tujuh varietas berbeda. 
 
-
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
-
 ### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
 Dataset ini memiliki 16 fitur numerik yang menggambarkan karakteristik morfologis biji, serta satu fitur target ('Class') yang menunjukkan varietas biji. Berikut adalah deskripsi singkat dari beberapa fitur:
 
@@ -91,7 +88,7 @@ Dataset ini memiliki 16 fitur numerik yang menggambarkan karakteristik morfologi
 - ShapeFactor1-4: Faktor bentuk biji.
 - Class: Label kelas yang menunjukkan varietas biji (Seker, Barbunya, Bombay, Cali, Horoz, Sira, Dermason).
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
+**Rubrik/Kriteria Tambahan**:
 ### Exploratory Data Analysis
 1. Visualisasi Distribusi Kelas
 Tujuan: Memahami distribusi target (Class) sebelum pemodelan, karena ketidakseimbangan kelas bisa memengaruhi performa model klasifikasi.
@@ -101,11 +98,8 @@ Tujuan: Memberikan gambaran umum nilai-nilai dari setiap fitur, mendeteksi kemun
 
 3. Boxplot untuk Menganalisis Hubungan Setiap Fitur dengan Kelas
 Tujuan:
-
 -- Melihat apakah fitur-fitur memiliki pola yang berbeda antar kelas (artinya fitur tersebut memiliki potensi baik untuk klasifikasi).
-
 -- Mengidentifikasi sebaran data dan kemungkinan outlier pada masing-masing kelas.
-
 -- Membantu dalam feature selection dan justifikasi kenapa fitur ini dipakai dalam modeling.
 
 ## Data Preparation
@@ -128,10 +122,10 @@ Alasan: SMOTE menjaga keberagaman sampel dan meningkatkan generalisasi model.
 Alasan: Stratifikasi memastikan distribusi kelas di train dan test set tetap proporsional dan menghindari overfitting
 
 
-## Modeling
+## Modelling
 Pada tahap ini, dilakukan proses pelatihan model machine learning untuk menyelesaikan permasalahan klasifikasi jenis kacang berdasarkan fitur morfologinya. Proses modeling melibatkan beberapa algoritma populer, serta eksplorasi parameter untuk mendapatkan performa terbaik.
 
-### Algoritma yang digunakan
+**Algoritma yang digunakan**
 1. XGBoost dengan Tuning Hyperparameter (Optuna)
 - Parameter yang Dituning:
 learning_rate: 0.005 - 0.05,
@@ -190,11 +184,8 @@ Menggunakan StratifiedKFold dengan 10 fold untuk menghindari overfitting dan men
 Menggunakan ROC AUC sebagai objective metric karena dapat menangani multi-class classification dengan baik menggunakan pendekatan One-vs-Rest.
 
 4. Best Trial:
-
 Trial terbaik ditemukan pada iterasi ke-83 dari total 100 trial, dengan hasil:
-
 ROC AUC: 0.9972
-
 Accuracy: 95.05%
 
 
