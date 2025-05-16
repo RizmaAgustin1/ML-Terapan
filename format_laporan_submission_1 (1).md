@@ -70,7 +70,7 @@ Untuk mencapai tujuan dalam mengklasifikasikan jenis kacang kering secara akurat
 ### Sumber Data
 Dataset yang digunakan adalah Dry Bean Dataset dari [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/602/dry+bean+dataset), yang terdiri dari 13.611 sampel biji kering dari tujuh varietas berbeda. 
 
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
+### Variabel-variabel pada Dry Bean UCI dataset adalah sebagai berikut:
 Dataset ini memiliki 16 fitur numerik yang menggambarkan karakteristik morfologis biji, serta satu fitur target ('Class') yang menunjukkan varietas biji. Berikut adalah deskripsi singkat dari beberapa fitur:
 
 - Area: Luas area biji dalam piksel.
